@@ -94,7 +94,7 @@ namespace BlogA.Services
                     }
 
                     //get chapter heading 
-                    var chapterIds = cmtList.GroupBy(c => c.ChapterId).Select(x => x.Key).ToList();
+                    var chapterIds = cmtList.Where(c=>c.ChapterId!=null).GroupBy(c => c.ChapterId).Select(x => x.Key).ToList();
                     if (chapterIds.Any())
                     {
                         //get chapter id, sec id, name
